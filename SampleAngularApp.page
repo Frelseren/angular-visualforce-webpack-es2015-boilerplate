@@ -1,0 +1,25 @@
+<apex:page standardStylesheets="false" sidebar="false"
+ showHeader="false" applyBodyTag="false" applyHtmlTag="false"
+ docType="html-5.0" controller="SampleController">
+ <html>
+    <head>
+      <title>Sample angular and salesforce application</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SampleStatic, '/css/main.css')}" />
+      <script>
+        window.RESOURCE_ROOT = "{!URLFOR($Resource.SampleStatic, '')}";
+      </script>
+    </head>
+    <body ng-app="sampleApp" ng-strict-di="true">
+      <h1>Sample angular and salesforce application</h1>
+      <!-- View -->
+      <ng-view></ng-view><!-- / View -->
+      <!-- Scripts -->
+      <script src="{!URLFOR($Resource.SampleStatic, 'vendor.bundle.js')}"></script>
+      <script>
+        !function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={exports:{},id:o,loaded:!1};return e[o].call(r.exports,r,r.exports,t),r.loaded=!0,r.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{"default":e}}var r=n(1),u=o(r),a=n(2),l=o(a),i=n(3),s=o(i),c=n(4),d=o(c),p=n(5),f=o(p);angular.module("sampleApp",["ngRoute"]).config(["$locationProvider","$routeProvider",u["default"]]).service("getSampleData",l["default"]).component("sampleComponent",s["default"]).component("sampleSubComponent",d["default"]).filter("uniquePipe",f["default"])},function(e,t){"use strict";function n(e,t){e.hashPrefix("!"),t.when("/",{template:"<sample-component></sample-component>"}).otherwise("/")}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n},function(e,t){"use strict";function n(){this.heroes={!heroesJSON}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]={templateUrl:RESOURCE_ROOT+"/templates/sample.component.html",controller:["getSampleData",function(e){this.heroes=e.heroes}]}},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]={templateUrl:RESOURCE_ROOT+"/templates/sample-sub.component.html",bindings:{hero:"<"}}},function(e,t){"use strict";function n(){return function(e,t){for(var n={},o=[],r=0;r<e.length;r++)"undefined"==typeof n[e[r][t]]&&(n[e[r][t]]="",o.push(e[r]));return o}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n}]);
+      </script><!-- / Scripts -->
+    </body>
+ </html>
+</apex:page>
