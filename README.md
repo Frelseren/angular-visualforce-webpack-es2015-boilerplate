@@ -3,27 +3,28 @@
 Simple boilerplate for Angular + Salesforce application.
 
 Technology used:
-<ul>
-  <li>Angular 1.5+<br>Using new `components` instead of `directive` and `controller`. DOM manipulation will be made inside component's controller using the `$element` variable and `$postLink` trigger.
-  </li>
-  <li>Webpack module bundler</li>
-  <li>Babel<br>Using `babel-loader` for webpack which allows take advantage of es2015 module system</li>
-  <li>Karma<br>Using `karma` with `angular-mock` for unit testing.</li>
-</ul>
+  * Angular 1.5+
+    * Using new `components` instead of `directive` and `controller`. DOM manipulation will be made inside component's controller using the `$element` variable and `$postLink` trigger.
+  
+  * Webpack module bundler
+  * Babel
+    * Using `babel-loader` for webpack which allows take advantage of es2015 module system
+  * Karma
+    * Using `karma` with `angular-mock` for unit testing.
 
 Get started with Angular 1.x + Salesforce.
 
-<ol>
-  <li>Create an apex class in Salesforce which ouputs JSON object.</li>
-  <li>Create a static resorce which contains `css`, `img`, `templates` and `vendor.bundle.js` files.</li>
-  <li>Create a visualforce page.</li>
-  <li>Reference previously created controller</li>
-  <li>Create a global `RESOURCE_ROOT` variable (it's one way to reference the Angular templates) with path to our static resource.<br><code>var window.RESOURCE_ROOT = {!URLFOR($Resource.SampleStatic, '')}</code></li>
-  <li>Copy html markup from `index.html` to visualforce page</li>
-  <li>Copy and paste `app.js` code into our page</li>
-  <li>Change angular objects to salesforce objects.<br><code>this.heroes = {!heroesJSON}</code></li>
-  <li>Add `RESOURCE_ROOT' to the path to angular templates.<br>
-  <code>"templateUrl":RESOURCE_ROOT+"/dist/templates/sample.component.html"</code></li>
-</ol>
+  1. Create an apex class in Salesforce which ouputs JSON object.
+  2. Create a static resorce which contains `css`, `img`, `templates` and `vendor.bundle.js` files.
+  3. Create a visualforce page.
+  4. Reference previously created controller
+  5. Create a global `RESOURCE_ROOT` variable (it's one way to reference the Angular templates) with path to our static resource.
+    * `var window.RESOURCE_ROOT = {!URLFOR($Resource.SampleStatic, '')}`
+  6. Copy html markup from `index.html` to visualforce page.
+  7. Copy and paste `app.js` code into our page.
+  8. Change angular objects to salesforce objects.
+    * `this.heroes = {!heroesJSON}`
+  9. Add `RESOURCE_ROOT` to the path to angular templates.
+    * `"templateUrl":RESOURCE_ROOT+"/dist/templates/sample.component.html"`
 
 `SampleController.cls` and `SampleAngularApp.page` files contain required changes.
